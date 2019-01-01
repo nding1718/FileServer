@@ -1,2 +1,3 @@
 # FileServer
-Simple file server
+Simple file server used to store some small files 
+
