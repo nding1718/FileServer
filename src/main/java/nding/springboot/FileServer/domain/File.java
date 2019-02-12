@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.Deque;
+import java.util.LinkedList;
 
 @Data
 @Document
@@ -19,6 +21,8 @@ public class File {
     private String md5;
     private byte[] content;
     private String path;
+
+    private Deque<Integer> list = new LinkedList<>();
 
 
     protected File() {};
