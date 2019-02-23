@@ -68,7 +68,7 @@ public class FileController {
     @ResponseBody
     public ResponseEntity<Object> serveFile(@PathVariable String id) throws UnsupportedEncodingException {
 
-        Optional<File> file = Optional.ofNullable(fileService.getFileById(id));
+        Optional<File> file = fileService.getFileById(id);
 
         if (file.isPresent()) {
             return ResponseEntity.ok()
@@ -92,7 +92,7 @@ public class FileController {
     @ResponseBody
     public ResponseEntity<Object> serveFileOnline(@PathVariable String id) {
 
-        Optional<File> file = Optional.ofNullable(fileService.getFileById(id));
+        Optional<File> file = fileService.getFileById(id);
 
         if (file.isPresent()) {
             return ResponseEntity.ok()

@@ -25,7 +25,7 @@ public interface FileService {
      * @param id
      * @return
      */
-    File getFileById(String id);
+    Optional<File> getFileById(String id);
 
     /**
      * Retrieve all the files by page

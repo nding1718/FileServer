@@ -34,8 +34,8 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
-    public File getFileById(String id) {
-        return fileRepository.findById(id).orElse(null);
+    public Optional<File> getFileById(String id) {
+        return fileRepository.findById(id);
     }
 
     @Override
@@ -44,8 +44,7 @@ public class FileServiceImpl implements FileService {
         List<File> list = null;
 
         Sort sort = new Sort(Sort.Direction.DESC,"uploadDate");
-        Pageable pageable = new PageRequest(pageIndex, pageSize, sort);
-
+        Pageable pageable = PageRequest.of(pageIndex, pageSize, sort);
         page = fileRepository.findAll(pageable);
         list = page.getContent();
         return list;
