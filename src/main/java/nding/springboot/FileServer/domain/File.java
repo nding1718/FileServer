@@ -1,13 +1,10 @@
 package nding.springboot.FileServer.domain;
 
-import lombok.Data;
 import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
-import java.util.Deque;
-import java.util.LinkedList;
 
 @Document
 public class File {
@@ -85,17 +82,6 @@ public class File {
     public void setPath(String path) {
         this.path = path;
     }
-
-    public Deque<Integer> getList() {
-        return list;
-    }
-
-    public void setList(Deque<Integer> list) {
-        this.list = list;
-    }
-
-    private Deque<Integer> list = new LinkedList<>();
-
 
     protected File() {};
 
