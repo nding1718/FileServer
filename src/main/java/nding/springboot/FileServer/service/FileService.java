@@ -17,4 +17,3 @@ public interface FileService {
 
     List<File> listFilesByPage(int pageIndex, int pageSize);
 }
-
