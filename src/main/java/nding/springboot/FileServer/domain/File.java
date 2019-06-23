@@ -19,6 +19,7 @@ public class File {
     private Binary content;
     private String path;
 
+
     public String getId() {
         return id;
     }
