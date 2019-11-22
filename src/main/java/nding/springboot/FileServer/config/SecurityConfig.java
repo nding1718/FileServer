@@ -15,6 +15,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 @Configuration
 public class SecurityConfig implements WebMvcConfigurer {
+    /**
+     * (1) "/**" is Ant-style path patterns. And "**" matches zero or more 'directories' in a path
+     * (2) "*" will allow all origins. (a origin includes Protocol, Host and  Port)
+     * @param registry
+     */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**").allowedOrigins("*") ;
