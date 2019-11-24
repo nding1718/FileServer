@@ -86,7 +86,13 @@ public class File {
 
     protected File() {};
 
-
+    /**
+     * Constructor
+     * @param name File nam
+     * @param contentType File content
+     * @param size File size
+     * @param content Binary Content
+     */
     public File(String name, String contentType, long size, Binary content) {
         this.name = name;
         this.contentType = contentType;
@@ -94,7 +100,11 @@ public class File {
         this.uploadDate = new Date();
         this.content = content;
     }
-
+    /**
+     * Override the equals method of Object
+     * @param object
+     * @return
+     */
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -111,7 +121,10 @@ public class File {
                 && java.util.Objects.equals(md5, fileInfo.md5)
                 && java.util.Objects.equals(id, fileInfo.id);
     }
-
+    /**
+     * Override the hashcode method at the same time
+     * @return
+     */
     @Override
     public int hashCode() {
         return java.util.Objects.hash(name, contentType, size, uploadDate, md5, id);
